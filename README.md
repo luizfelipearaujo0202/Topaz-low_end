@@ -1,1 +1,0 @@
-# Topaz-low_end
