@@ -4,10 +4,19 @@ from modules.analyzer import analyze_frames
 from modules.enhancer import enhance_frames
 from modules.renderer import render_video
 
+from utils.paths import BASE_DIR, VIDEOS_DIR, FRAMES_DIR, OUTPUT_DIR, ensure_dirs
+from utils.video_finder import find_video
 
-VIDEO_PATH = "videos/input.mp4"
+ensure_dirs()
+
+VIDEO_PATH = find_video(VIDEOS_DIR)
 FRAMES_PATH = "frames"
 OUTPUT_PATH = "output/final.mp4"
+
+print("__file__:", __file__)
+print("BASE_DIR:", BASE_DIR)
+os.chdir("/home/luiz412/Desktop/Treinos/Topaz low_end")
+print("CWD:", os.getcwd())
 
 
 def main():

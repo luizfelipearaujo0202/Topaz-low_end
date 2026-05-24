@@ -3,6 +3,7 @@ import os
 
 def extract_frames(video_path, frames_path):
     cap = cv2.VideoCapture(video_path)
+    print(cap.isOpened())
 
     if not cap.isOpened():
         print("💀 erro abrindo vídeo")
@@ -16,7 +17,7 @@ def extract_frames(video_path, frames_path):
         if not ret:
             break
 
-        frame_path = os.path.join(frames_path, f"frame_{count}.jpg")
+        frame_path = os.path.join(frames_path, f"frame_{count}.png")
         cv2.imwrite(frame_path, frame)
 
         frames.append(frame)
