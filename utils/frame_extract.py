@@ -1,8 +1,8 @@
 import os
 import cv2
 
-def extrair_frames(video_path, pasta_saida):
-    os.makedirs(pasta_saida, exist_ok=True)
+def extrair_frames(video_path):
+    os.makedirs("frames", exist_ok=True)
 
     cap = cv2.VideoCapture(video_path)
 
@@ -15,7 +15,7 @@ def extrair_frames(video_path, pasta_saida):
             break
 
         nome = os.path.join(
-            pasta_saida,
+            "frames",
             f"frame_{frame_id:05d}.png"
         )
 
