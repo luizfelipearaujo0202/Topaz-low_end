@@ -1,4 +1,6 @@
 import os
+import argparse
+
 from modules.extractor import extract_frames
 from modules.analyzer import analyze_frames
 from modules.enhancer import enhance_frames
@@ -8,6 +10,17 @@ from utils.paths import BASE_DIR, VIDEOS_DIR, FRAMES_DIR, OUTPUT_DIR, ensure_dir
 from utils.video_finder import find_video
 
 ensure_dirs()
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--mode", type=str, default="run")
+
+args = parser.parse_args()
+
+if args.mode == "train":
+    print("Modo treino ativado.")
+
+elif args.mode == "run":
+    print("Modo execução ativado.")
 
 VIDEO_PATH = find_video(VIDEOS_DIR)
 FRAMES_PATH = "frames"
